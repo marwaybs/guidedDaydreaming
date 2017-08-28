@@ -5,7 +5,7 @@
 
 <body id="session">
     <div >
-        <div class="circle" id = "bls" style="position:absolute;"></div>
+        <div class="circle" id = "bls"></div>
     </div>
     <div class="has-text-centered">
       <p id="wanderText" class="fadeInAndOut" >Please allow your mind to wander and your eyes to follow the moving ball.</p>
@@ -20,7 +20,7 @@
 
         <div class="field has-text-centered">
           <%= f.label :rating, :class => 'label' %>
-          <%= f.number_field :rating %>
+          <%= f.number_field :rating, min:"1", max:"5" %>
         </div>
 
         <div class="has-text-centered">
