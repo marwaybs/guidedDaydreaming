@@ -89,7 +89,4 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  ENV["BLAZER_DATABASE_URL"] = "postgres://guidedDaydreaming:@localhost:5432/guidedDaydreaming_production"
-
-
 end
