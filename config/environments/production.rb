@@ -5,7 +5,7 @@ Rails.application.configure do
   config.cache_classes = true
 
   # Eager load code on boot. This eager loads most of Rails and
-  # your application in memory, allowing both threaded web servers
+  # your application in memory, allowing both threaded web serversENV["BLAZER_DATABASE_URL"] = "postgres://user:password@hostname:5432/database"
   # and those relying on copy on write to perform better.
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
@@ -88,4 +88,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  ENV["BLAZER_DATABASE_URL"] = "postgres://user:@localhost:5432/guidedDaydreaming_development"
+
 end
