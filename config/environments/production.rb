@@ -91,8 +91,5 @@ Rails.application.configure do
 
   ENV["BLAZER_DATABASE_URL"] = "postgres://guidedDaydreaming:<%= ENV['GUIDEDDAYDREAMING_DATABASE_PASSWORD'] %>@localhost:5432/guidedDaydreaming_production"
 
-  database: guidedDaydreaming_production
-  username: guidedDaydreaming
-
 
 end
