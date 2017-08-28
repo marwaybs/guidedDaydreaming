@@ -1,0 +1,61 @@
+<head>
+  <%= stylesheet_link_tag params[:controller] %>
+</head>
+
+<body>
+  <div class="columns has-text-centered">
+    <div class="column">
+    </div>
+    <div class="column is-three-quarters-mobile is-one-half-desktop">
+    <%= image_tag("dark_logo_transparent.svg", :alt => "rss feed") %>
+  </div>
+  <div class="column">
+  </div>
+  </div>
+  <!-- <section class="hero intro">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title center">
+          Guided Daydreaming
+        </h1>
+        <h2 class="subtitle">
+          Daydream for Meaning
+        </h2>
+      </div> -->
+
+      <section class="section">
+      <div class = "container has-text-centered">
+          <p>Why do we spend so much time day dreaming?</p>
+          <p>Is it an escape?</p>
+          <p>Or something more?<a href="http://journal.frontiersin.org/article/10.3389/fpsyg.2013.00626/full"><sup>1</sup></a></p>
+      </div>
+      </section>
+
+      <section class="section">
+          <div class="container">
+            <h4 class="title"><strong>Instructions:</strong></h4>
+            <h5 class="subtitle">
+              Please allow your mind to wander and your eyes to follow the moving ball.
+            </h5>
+          </div>
+    </section>
+
+      <div class = has-text-centered>
+          <%= link_to 'Begin', session_path(), class:"button is-primary" %>
+      </div>
+    </div>
+  </section>
+  <br/>
+
+
+  <footer class="footer intro">
+    <div class="container">
+      <div class="content has-text-right">
+        <p>
+          <a href="https://github.com/marwaybs/guidedDaydreaming">Source</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+  <%= javascript_include_tag params[:controller] %>
+</body>

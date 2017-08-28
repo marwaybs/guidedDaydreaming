@@ -1,0 +1,35 @@
+<head>
+  <%= stylesheet_link_tag params[:controller] %>
+</head>
+
+
+<body id="session">
+    <div >
+        <div class="circle" id = "bls" style="position:absolute;"></div>
+    </div>
+    <div class="has-text-centered">
+      <p id="wanderText" class="fadeInAndOut" >Please allow your mind to wander and your eyes to follow the moving ball.</p>
+    </div>
+    <div id="finished" class="field has-text-centered">
+
+      <%= form_for :session do |f| %>
+        <div class="field has-text-centered">
+          <%= f.label :comment, :class => 'label' %>
+          <%= f.text_field :comment %>
+        </div>
+
+        <div class="field has-text-centered">
+          <%= f.label :rating, :class => 'label' %>
+          <%= f.number_field :rating %>
+        </div>
+
+        <div class="has-text-centered">
+
+          <%= f.submit :class => 'button is-primary'  %>
+          <%= link_to 'Restart', session_path(), class:"button info " %>
+        </div>
+      <% end %>
+    </div>
+
+    <%= javascript_include_tag params[:controller] %>
+<body>

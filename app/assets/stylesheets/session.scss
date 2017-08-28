@@ -1,0 +1,116 @@
+html{
+  background-color: black;
+}
+
+
+/*circle for bls*/
+.circle {
+  height: 6vw;
+  width: 6vw;
+  background: white;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-top: 40vh;
+  opacity: 0;
+  left:47vw;
+}
+
+.hideBLS{
+  background: black ! important;
+}
+
+#finished{
+  opacity: 0;
+  display: none;
+}
+
+
+.blsAnimation {
+  animation-name: fadeIn, moveCenterLeft, moveLeftRight, moveLeftCenter, fadeOut;
+  /*animation-duration: 1000ms, 2000ms, 1000ms, 1000ms;
+  animation-delay: 1000ms, 2000ms, 6000ms,7000ms;*/
+  animation-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+  /*animation-iteration-count: 1, 2, 1, 1;*/
+  animation-direction: normal, normal, alternate, normal, normal;
+  animation-fill-mode: forwards, none, none, none, forwards;
+}
+
+// BLS animations
+@keyframes fadeIn{
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut{
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/*animations for bls*/
+@keyframes moveCenterLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-40vw);
+  }
+}
+
+/*iterations must be in multiples of 2*/
+@keyframes moveLeftRight {
+  0% {
+    transform: translateX(-40vw);
+  }
+  100% {
+    transform: translateX(40vw);
+  }
+}
+
+@keyframes moveLeftCenter {
+  0% {
+    transform: translateX(-40vw);
+  }
+  100% {
+    transform: translateX(0vw);
+  }
+}
+
+#wanderText {
+  color: white;
+  // margin: 0 auto;
+  margin-top: 70vh;
+  // margin-left: 40vh;
+  font-size: 200%;
+}
+
+// Fade in text animations
+.fadeInAndOut {
+  animation: fadeinout 4s linear forwards;
+  opacity: 0;
+}
+
+@-webkit-keyframes fadeinout {
+  50% { opacity: 1; }
+}
+
+@keyframes fadeinout {
+  50% { opacity: 1; }
+}
+
+.fadeIn {
+  animation: fadeIn 2s linear forwards;
+  opacity: 0;
+}
+
+#finished{
+  opacity: 0;
+  display: none;
+}
