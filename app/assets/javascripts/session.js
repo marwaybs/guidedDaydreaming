@@ -1,9 +1,12 @@
-var totalReps = 1; //Repitions of BLS
+var totalReps = 5; //Repitions of BLS
 var rep = 0; //Current rep
-var maxTime = 6; //max time of each rep
-var minTime = 8; //minimum time of each rep
-var wanderTextList = ["Where are you now?", "Is there another way to see it?"] //text appearing between each BLS rep
-
+var maxTime = 20; //max time of each rep
+var minTime = 40; //minimum time of each rep
+var wanderTextList = ["Where are you now?", //text appearing between each BLS rep
+                      "Is there another way to see it?",
+                      "Is this a productive thought?",
+                      "How could this be different?",
+                      "Dig deeper"] 
 
 
 function updateSlowAnimation(time){
@@ -43,7 +46,7 @@ function restartAnimation(speed, time) {
   circle.remove();
 };
 
-
+// to re-use animation need to clone, delete original instance and then animate the clone
 function fade(){
   var wanderText = $('#wanderText'),
   newone = wanderText.clone(true);
@@ -54,7 +57,7 @@ function fade(){
 function blsRep(){
   // basecase for session finished
   if (rep >= totalReps){
-    ahoy.track("Session is finished");
+    ahoy.track("Session is finished"); //counts how many sessions have been finished
     setTimeout(function(){
       $("#wanderText").text("Session is finished");
       $("#finished").css("display","block");
@@ -65,24 +68,21 @@ function blsRep(){
   }else{
     var time = Math.random() * (maxTime - minTime) + minTime;
     time = 2 * Math.round(time / 2); //time needs to be even for animation to work correctly
-
-    console.log(time);
     restartAnimation("fast", time);
 
-    setTimeout(function(){
+    setTimeout(function(){ //timeout for wandertext to appear between bls sets
       $("#wanderText").text(wanderTextList[Math.floor(Math.random()*wanderTextList.length)]);
       fade();
-
     }, (time+3)*1000);
 
-    setTimeout(function(){
+    setTimeout(function(){ //timeout for bls to restart
       rep++
       blsRep();
     }, (time+6)*1000);
   }
 }
 
-$(function() {
+$(function() { //class needs to be applied to bls ball.
   $('#bls').addClass('blsAnimation');
   blsRep();
 })
