@@ -1,12 +1,12 @@
-var totalReps = 5; //Repitions of BLS
+var totalReps = 2; //Repitions of BLS
 var rep = 0; //Current rep
-var maxTime = 20; //max time of each rep
-var minTime = 40; //minimum time of each rep
+var maxTime = 45; //max time of each rep
+var minTime = 20; //minimum time of each rep
 var wanderTextList = ["Where are you now?", //text appearing between each BLS rep
                       "Is there another way to see it?",
                       "Is this a productive thought?",
                       "How could this be different?",
-                      "Dig deeper"] 
+                      "Dig deeper"]
 
 
 function updateSlowAnimation(time){
@@ -63,11 +63,12 @@ function blsRep(){
       $("#finished").css("display","block");
       $("#wanderText").addClass("fadeIn");
       $("#finished").addClass("fadeIn");
-    }, 3000);
+    }, 2000);
 
   }else{
     var time = Math.random() * (maxTime - minTime) + minTime;
     time = 2 * Math.round(time / 2); //time needs to be even for animation to work correctly
+    console.log(time);
     restartAnimation("fast", time);
 
     setTimeout(function(){ //timeout for wandertext to appear between bls sets
