@@ -2,12 +2,13 @@
   color:lightblue;
 }
 
-#beginButton{
-  height:6rem;
-  width: 14rem;
-  font-size: 2rem;
-}
-
 .instructionList{
   padding: 0.5rem 0.5rem;
+}
+
+@media (max-width: 768px) {
+  #beginButton{
+    padding: 20rem;
+    font-size: 20rem;
+  }
 }
