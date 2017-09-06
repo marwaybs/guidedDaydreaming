@@ -85,9 +85,7 @@ html{
 
 #wanderText {
   color: white;
-  // margin: 0 auto;
   margin-top: 20vh;
-  // margin-left: 40vh;
   font-size: 200%;
 }
 
@@ -110,7 +108,8 @@ html{
   opacity: 0;
 }
 
-#finished{
-  opacity: 0;
+#postSubmitText{
+  opacity:0;
   display: none;
+  color: white;
 }

@@ -1,7 +1,9 @@
-var totalReps = 5; //Repitions of BLS
+ahoy.trackAll();
+
+var totalReps = 1; //Repitions of BLS
 var rep = 0; //Current rep
-var maxTime = 45; //max time of each rep
-var minTime = 20; //minimum time of each rep
+var maxTime = 1; //max time of each rep
+var minTime = 1; //minimum time of each rep
 var wanderTextList = ["Where are you now?", //text appearing between each BLS rep
                       "Is there another way to see it?",
                       "Is this a productive thought?",
@@ -87,3 +89,36 @@ $(function() { //class needs to be applied to bls ball.
   $('#bls').addClass('blsAnimation');
   blsRep();
 })
+
+// //to make postSubmitText appear when button is pressed
+// $(function() {
+//   alert("button pressed!");
+//
+//   $( "#submitButton" ).click(function() {
+//     alert("button pressed!");
+//     $("#postSubmitText").css("display","block");
+//     $("#postSubmitText").addClass("fadeIn");
+//   });
+// });
+
+
+// $( "#submitButton" ).click(function() {
+//   alert("button pressed!");
+//   $("#postSubmitText").css("display","block");
+//   $("#postSubmitText").addClass("fadeIn");
+// });
+
+
+// $(function() {
+//       $("#submitButton").click(function()
+//            {
+//              alert('button clicked');
+//            }
+//       );
+// });
+//
+
+function showPostSubmitText(){
+  $("#postSubmitText").css("display","block");
+  $("#postSubmitText").addClass("fadeIn");
+}
