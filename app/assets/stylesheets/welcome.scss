@@ -6,9 +6,9 @@
   padding: 0.5rem 0.5rem;
 }
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   #beginButton{
-    padding: 20rem;
-    font-size: 20rem;
+    padding: 4rem;
+    font-size: 2rem;
   }
 }
