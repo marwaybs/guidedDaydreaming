@@ -3,14 +3,12 @@
 </head>
 
 <body>
-  <div class="columns has-text-centered">
-    <div class="column">
-    </div>
-    <div class="column is-three-quarters-mobile is-one-half-desktop">
+  <div class="columns is-centered">
+
+    <div id = "logo" class="column is-9-mobile is-offset-1-mobile is-6-desktop">
     <%= image_tag("dark_logo_transparent.svg", :alt => "rss feed") %>
   </div>
-  <div class="column">
-  </div>
+
   </div>
       <section class="section">
       <div class = "container">
@@ -34,7 +32,7 @@
 
 
       <div class = has-text-centered>
-          <%= link_to 'Begin', session_path(), id:"beginButton", class:"button is-medium is-primary" %>
+          <%= link_to 'Begin', session_path(), id:"beginButton", class:"button is-primary" %>
       </div>
     </div>
   </section>
