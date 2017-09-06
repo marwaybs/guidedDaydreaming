@@ -25,11 +25,14 @@
 
         <div class="has-text-centered">
 
-          <%= f.submit "Submit", :class => 'button is-primary is-medium'  %>
+          <%= f.submit "Submit", :id= => "submitButton", :onclick => "showPostSubmitText()", :class => 'button is-primary is-medium'  %>
           <%= link_to 'Restart', session_path(), class:"button info is-medium" %>
         </div>
       <% end %>
     </div>
+    <div id="postSubmitText" class="container has-text-centered">
+        <span>Thank you for the feedback!</span>
+    </div<>
 
     <%= javascript_include_tag params[:controller] %>
 <body>

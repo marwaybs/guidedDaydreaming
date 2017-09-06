@@ -1,9 +1,9 @@
 ahoy.trackAll();
 
-var totalReps = 1; //Repitions of BLS
+var totalReps = 5; //Repitions of BLS
 var rep = 0; //Current rep
-var maxTime = 1; //max time of each rep
-var minTime = 1; //minimum time of each rep
+var maxTime = 45; //max time of each rep
+var minTime = 25; //minimum time of each rep
 var wanderTextList = ["Where are you now?", //text appearing between each BLS rep
                       "Is there another way to see it?",
                       "Is this a productive thought?",
