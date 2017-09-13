@@ -2,13 +2,29 @@ ahoy.trackAll();
 
 var totalReps = 5; //Repitions of BLS
 var rep = 0; //Current rep
-var maxTime = 45; //max time of each rep
-var minTime = 25; //minimum time of each rep
+var maxTime = 35; //max time of each rep
+var minTime = 20; //minimum time of each rep
 var wanderTextList = ["Where are you now?", //text appearing between each BLS rep
                       "Is there another way to see it?",
                       "Is this a productive thought?",
                       "How could this be different?",
-                      "Dig deeper"]
+                      "Dig deeper",
+                      "What physical sensation are you noticing?",
+                      "What emotion are you feeling?",
+                      "What is an earlier time you felt similarly?",
+                      "How could it have been different?",
+                      "Go back to the initial memory.",
+                      "Try daydreaming faster.",
+                      "Try daydreaming to other places.",
+                      "Try daydreaming to an earlier time.",
+                      "Try daydreaming slower.",
+                      "What conversation does it remind you of?",
+                      "Which person comes to mind?",
+                      "What are you avoiding thinking about?",
+                      "Who do you want to talk to?",
+                      "How could things feel different?",
+                      "Change how your body is responding.",
+                    ]
 
 
 function updateSlowAnimation(time){
@@ -29,7 +45,7 @@ function updateFastAnimation(time) {
   sideToSideTime = sideToSideIteration
   sideToSideDelay = 1.5 + sideToSideTime;
   fadeOutDelay = sideToSideDelay + 2
-  //Apply class before changing the css class
+  //Apply class before changing the css class to adjust the animation
   iterString = "1, 1, "+sideToSideIteration+", 1, 1"
   delayString = "0s, 1s, 1500ms, "+sideToSideDelay+"s, "+fadeOutDelay+"s";
   // console.log(iterString, delayString);
@@ -90,35 +106,23 @@ $(function() { //class needs to be applied to bls ball.
   blsRep();
 })
 
-// //to make postSubmitText appear when button is pressed
-// $(function() {
-//   alert("button pressed!");
-//
-//   $( "#submitButton" ).click(function() {
-//     alert("button pressed!");
-//     $("#postSubmitText").css("display","block");
-//     $("#postSubmitText").addClass("fadeIn");
-//   });
-// });
-
-
-// $( "#submitButton" ).click(function() {
-//   alert("button pressed!");
-//   $("#postSubmitText").css("display","block");
-//   $("#postSubmitText").addClass("fadeIn");
-// });
-
-
-// $(function() {
-//       $("#submitButton").click(function()
-//            {
-//              alert('button clicked');
-//            }
-//       );
-// });
-//
-
 function showPostSubmitText(){
   $("#postSubmitText").css("display","block");
   $("#postSubmitText").addClass("fadeIn");
 }
+
+//for star ratings
+// target element
+var el = document.querySelector('#el');
+
+// current rating, or initial rating
+var currentRating = 0;
+
+// max rating, i.e. number of stars you want
+var maxRating= 5;
+
+// callback to run after setting the rating
+var callback = function(rating) { alert(rating); };
+
+// rating instance
+var myRating = rating(el, currentRating, maxRating, callback);
