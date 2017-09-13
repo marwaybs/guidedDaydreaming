@@ -3,6 +3,12 @@ html{
 }
 
 
+#startingMemory {
+  color: white;
+  font-size: 200%;
+  margin:auto;
+}
+
 /*circle for bls*/
 .circle {
   height: 6vw;
@@ -85,8 +91,16 @@ html{
 
 #wanderText {
   color: white;
-  margin-top: 20vh;
+  margin-top: 5vh;
   font-size: 200%;
+  opacity:0;
+}
+
+#breath {
+  color: white;
+  margin-top: 10vh;
+  font-size: 200%;
+  opacity: 0;
 }
 
 // Fade in text animations
@@ -106,6 +120,10 @@ html{
 .fadeIn {
   animation: fadeIn 2s linear forwards;
   opacity: 0;
+}
+
+.fadeOut {
+  animation: fadeOut 1s linear forwards;
 }
 
 #postSubmitText{

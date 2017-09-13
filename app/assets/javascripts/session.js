@@ -4,26 +4,30 @@ var totalReps = 5; //Repitions of BLS
 var rep = 0; //Current rep
 var maxTime = 35; //max time of each rep
 var minTime = 20; //minimum time of each rep
+var breathDelay = 2.5
+var wanderTextDelay = breathDelay + 3;
+var BLSRestartDelay = wanderTextDelay + 3.5; //
 var wanderTextList = ["Where are you now?", //text appearing between each BLS rep
                       "Is there another way to see it?",
                       "Is this a productive thought?",
                       "How could this be different?",
-                      "Dig deeper",
-                      "What physical sensation are you noticing?",
+                      "Did you misinterpret anything? Dig deeper.",
+                      "Identify any physical sensations. Were they always there?",
                       "What emotion are you feeling?",
-                      "What is an earlier time you felt similarly?",
+                      "Have you felt this way before?",
                       "How could it have been different?",
                       "Go back to the initial memory.",
-                      "Try daydreaming faster.",
-                      "Try daydreaming to other places.",
-                      "Try daydreaming to an earlier time.",
-                      "Try daydreaming slower.",
-                      "What conversation does it remind you of?",
-                      "Which person comes to mind?",
+                      "Try focusing on the big picture",
+                      "What part evokes the strongest feeling?",
+//                      "Is your imagination in first person or third person?", //How would this provoke thought??
+                      "Focus on the tiny details. Are you missing something?",
+                      "Has anyone shared a similiar situation?",
+                      "Think about who's involved.",
                       "What are you avoiding thinking about?",
-                      "Who do you want to talk to?",
+                      "Who do you want to talk to?", ///change
                       "How could things feel different?",
-                      "Change how your body is responding.",
+                      "Is your body calm?",
+                      "Try to put yourself in another's position", //20
                     ]
 
 
@@ -65,11 +69,11 @@ function restartAnimation(speed, time) {
 };
 
 // to re-use animation need to clone, delete original instance and then animate the clone
-function fade(){
-  var wanderText = $('#wanderText'),
-  newone = wanderText.clone(true);
-  wanderText.before(newone);
-  wanderText.remove();
+function fade(element){
+  var elementToReanimate = $(element),
+  clone = elementToReanimate.clone(true);
+  elementToReanimate.before(clone);
+  elementToReanimate.remove();
 };
 
 function blsRep(){
@@ -81,7 +85,7 @@ function blsRep(){
       $("#finished").css("display","block");
       $("#wanderText").addClass("fadeIn");
       $("#finished").addClass("fadeIn");
-    }, 2000);
+    }, 1500);
 
   }else{
     var time = Math.random() * (maxTime - minTime) + minTime;
@@ -90,20 +94,40 @@ function blsRep(){
     restartAnimation("fast", time);
 
     setTimeout(function(){ //timeout for wandertext to appear between bls sets
+      if(rep==0){ //Class needs to be added for the first animation and then function fade is used to repeat animations
+        $("#breath").addClass("fadeInAndOut");
+      }else{
+        fade('#breath');
+      }
+    }, (time+breathDelay)*1000);
+
+    setTimeout(function(){ //timeout for wandertext to appear between bls sets
       $("#wanderText").text(wanderTextList[Math.floor(Math.random()*wanderTextList.length)]);
-      fade();
-    }, (time+3)*1000);
+      fade('#wanderText');
+    }, (time+wanderTextDelay)*1000);
 
     setTimeout(function(){ //timeout for bls to restart
       rep++
       blsRep();
-    }, (time+6)*1000);
+    }, (time+BLSRestartDelay)*1000);
   }
 }
 
-$(function() { //class needs to be applied to bls ball.
-  $('#bls').addClass('blsAnimation');
-  blsRep();
+$( "#memoryContinue" ).click(function() {
+  $("#startingMemory").addClass("fadeOut");
+});
+
+$(function() { //this function starts the session
+  $( "#memoryContinue" ).click(function() {
+    $("#startingMemory").addClass("fadeOut");
+
+    setTimeout(function(){ //timeout for wandertext to appear between bls sets
+      $("#startingMemory").css("display","none");
+      $('#wanderText').addClass("fadeInAndOut"); //class needs to be applied to bls ball for animation to start
+      $('#bls').addClass('blsAnimation'); //class needs to be applied to bls ball for animation to start
+      blsRep();
+    }, 2500);
+  });
 })
 
 function showPostSubmitText(){
@@ -111,18 +135,18 @@ function showPostSubmitText(){
   $("#postSubmitText").addClass("fadeIn");
 }
 
-//for star ratings
-// target element
-var el = document.querySelector('#el');
-
-// current rating, or initial rating
-var currentRating = 0;
-
-// max rating, i.e. number of stars you want
-var maxRating= 5;
-
-// callback to run after setting the rating
-var callback = function(rating) { alert(rating); };
-
-// rating instance
-var myRating = rating(el, currentRating, maxRating, callback);
+// //for star ratings
+// // target element
+// var el = document.querySelector('#el');
+//
+// // current rating, or initial rating
+// var currentRating = 0;
+//
+// // max rating, i.e. number of stars you want
+// var maxRating= 5;
+//
+// // callback to run after setting the rating
+// var callback = function(rating) { alert(rating); };
+//
+// // rating instance
+// var myRating = rating(el, currentRating, maxRating, callback);
