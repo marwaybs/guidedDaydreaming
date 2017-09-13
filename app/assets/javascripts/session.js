@@ -126,7 +126,7 @@ $(function() { //this function starts the session
       $('#wanderText').addClass("fadeInAndOut"); //class needs to be applied to bls ball for animation to start
       $('#bls').addClass('blsAnimation'); //class needs to be applied to bls ball for animation to start
       blsRep();
-    }, 2500);
+    }, 1000);
   });
 })
 
