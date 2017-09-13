@@ -13,7 +13,7 @@ var wanderTextList = ["Where are you now?", //text appearing between each BLS re
                       "How could this be different?",
                       "Did you misinterpret anything? Dig deeper.",
                       "Identify any physical sensations. Were they always there?",
-                      "What emotion are you feeling?",
+                      "What emotions are you feeling?",
                       "Have you felt this way before?",
                       "How could it have been different?",
                       "Go back to the initial memory.",
@@ -24,10 +24,10 @@ var wanderTextList = ["Where are you now?", //text appearing between each BLS re
                       "Has anyone shared a similiar situation?",
                       "Think about who's involved.",
                       "What are you avoiding thinking about?",
-                      "Who do you want to talk to?", ///change
+//                      "Who do you want to talk to?", ///change
                       "How could things feel different?",
                       "Is your body calm?",
-                      "Try to put yourself in another's position", //20
+                      "Try to put yourself in another's position", //19
                     ]
 
 
