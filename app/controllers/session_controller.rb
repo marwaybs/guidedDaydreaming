@@ -11,6 +11,6 @@ class SessionController < ApplicationController
   private
 
     def session_params
-      params.require(:session).permit(:comment, :rating)
+      params.require(:session).permit(:comment)
     end
 end

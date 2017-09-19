@@ -1,6 +1,6 @@
 ahoy.trackAll();
 
-var totalReps = 5; //Repitions of BLS
+var totalReps = 0; //Repitions of BLS
 var rep = 0; //Current rep
 var maxTime = 35; //max time of each rep
 var minTime = 20; //minimum time of each rep
