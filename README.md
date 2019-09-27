@@ -1,5 +1,5 @@
 # Guided Daydreaming
 
-Built with ruby on rails, postgresql
+A self-guided Eye Movement Desensitization and Reprocessing (EMDR) therapy.
 
 
